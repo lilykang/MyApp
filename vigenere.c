@@ -44,7 +44,7 @@ int main (int argc, string argv[])
             }
         }
         
-        int i = 0; 
+        int i = 0, k = 0;
         printf("ciphertext: ");
         
         //loop through each character to encrypt it
@@ -60,17 +60,19 @@ int main (int argc, string argv[])
                 if (isupper(plaintext[i]) != 0)
                 {
                     ai = (int)plaintext[i]- (int)65;  // alphabetical index number for the letter
-                    new_ascii = (ai + key_ai[i % strlen(key)]) % (int)26 + (int)65; // the new ascii number after encryption
+                    new_ascii = (ai + key_ai[k % strlen(key)]) % (int)26 + (int)65; // the new ascii number after encryption
                     printf("%c", (char)new_ascii);
                     i++;
+                    k++;
                 }
             
                 else if (islower(plaintext[i]) != 0)
                 {
                     ai = (int)plaintext[i]- (int)97;  // alphabetical index number for the letter
-                    new_ascii = (ai + key_ai[i % strlen(key)]) % (int)26 + (int)97; // the new ascii number after encryption
+                    new_ascii = (ai + key_ai[k % strlen(key)]) % (int)26 + (int)97; // the new ascii number after encryption
                     printf("%c", (char)new_ascii);
                     i++;
+                    k++;
                 }
             }
             
@@ -78,6 +80,7 @@ int main (int argc, string argv[])
             else
             {
                 printf("%c",plaintext[i]);
+                i++;
             }
             
         }
