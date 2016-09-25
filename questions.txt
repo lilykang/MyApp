@@ -1,0 +1,6 @@
+0. The game allows dimensions with both width and lengths equal to 3, 4, 5, 6, 7, 8, or 9. This was found in the beginning of the program
+where "DIM_MIN" and "DIM_MAX," the dimensions' minimum and maximum values, are defined to be 3 and 9, respectively.
+1. The game's board is represented with 2D arrays 
+2. The function called to greet users at the beginning is greet()
+3. I need to implement draw() that draws the initial setup of the game, init() that initializes the game, move() that allows users
+to move the tiles when the move requested is legal, and won() that gives the user a notification when the game is won 
