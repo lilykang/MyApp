@@ -1,0 +1,27 @@
+1. stdint.h is a library or a header that contains function "typedef" which allow users to 
+define the type of a variable and specify the number of bits it needs to store its value 
+using the binary system
+
+2. uint8, uint16, and uint64 are, respectively, 8-, 16-, and 64-bit unsigned integers. 
+int32 is a 32-bit signed integer. They are used to limit how many bits each type of variable 
+can have for storage.
+
+3. Hex:0x424d
+
+4. bfSize is the total number of bytes in a file whereas biSize is the total number of bytes in the info header
+
+5. A negative biHeight means a top-down DIB. biCompression must be either BI_RGB or BI_BITFIELDS. Top-down DIBs cannot be compressed.
+
+6. biBitCount defines the number of bits in each pixel and the maximum number of colors in the bitmap
+
+7. fopen might return null if the user does not have the right access control over those files 
+(read and write for infile and out file, respectively) or the file is corrupt or does not exist. 
+
+8. The third argument in fread is the number of times the file is read. We only want the file to be read once.
+
+9. Padding is 3
+
+10. fseek allows you to offset the file pointer. In copy.c, the program use fseek to forward the location of the pointer by 
+the size of the padding from the current location 
+
+11. SEEK_CUR is the current location of the pointer 
