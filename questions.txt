@@ -1,0 +1,31 @@
+0.  According to the dictionary, the word means "a pneumoconiosis caused by inhalation of very fine silicate or quartz dust." In this context, 
+    the word is an example of the longest word in the English dictionary. Any word detected in the text that's longer than this one will be ignored 
+    as a word. 
+
+1.  getrusage returns resource usage statistics for the calling process, all children of the calling process, or the calling thread. In Speller, 
+    getrusage(RUSAGE_SELF, &before) and getrusage(RUSAGE_SELF, &after) serve  to calculate the time it takes the program to spell check the text.
+
+2.  There are 16 members in the struct rusage. 
+
+3.  The getrusage function accepts two inputs and the second of which is of pointer type. We must pass the pointer of 
+    before and after into the function for it to run properly. It is also an efficient way to keeping track of the time before 
+    and after the program runs. 
+
+4.  According to the manual, fgetc()  reads the next character from the file and returns it as an unsigned char cast to an
+    int, or EOF on end of file or error. The for loop goes through each character of the word see if it exists in the dictionary. 
+    Each character is examined in the loop. If the character is a digit or it makes the length of the word longer than 45, 
+    the program ignores the word and start with the next word by setting the index to 0. When the word has only characters and 
+    apostraphe which is not at the beginning of the word, the program will intake the entire word by adding a character at a time. 
+    Once the entire word is in, the program checks if this word exists in the dictionary. If it does, then it is not misspelled. 
+    Otherwise, the word is considered misspelled and the program prints out the misspelled word. The program also counts the time 
+    it takes the system to run the program, the number of words misspelled, and the total number of words there are in the text file.
+    
+5.  We use fgetc to ensure each character of the word is indeed a character or apostrophe rather than a digit. The potential problem with fscanf 
+    is that we may have an invalid input and still check the spelling. The word can be invalid because it is longer than 45 characters or contain a digit. 
+    When the input is invalid, there is no point to go through the spell checking and it slows down the program. Additionally, fscanf ignores the blank 
+    space and makes it difficult for us to 
+    check each word's spelling.
+
+6.  Declaring a constant parameter, a pointer to word and dictionary in this case, helps to ensure that the functions "check" and "load"
+    do not modify the input. Both Check and Load point to a specific location in the computer's memory. We want these functions to only read the 
+    value in the memory rather than changing them. Const guards agains the improper modification of word and dictionary. 
