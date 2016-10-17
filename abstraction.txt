@@ -1,0 +1,51 @@
+= Abstraction
+
+== Answers
+
+1. 	Abstraction is applied in the process of reducing software artifacts to their essence such that 
+only the necessary elements are represented. Abstraction defines an object in in terms of its properties, 
+functionality, and interface. When "stack" and "queue" are referred to as "abstract data types" 
+rather than data structure, they are abstractions in the sense that they provide principles for how objects 
+are inserted and removed from the container. Stack provides a container of objects that follows the 
+"last-in first-out (LIFO)" principle whereas queue provides a container of objects that follows the 
+"first-in first out (FIFO)" principle. Both stack and queue are abstract data types because we can implement 
+them in a number of different ways but they have the same properties and operations. For example, 
+when we have the following: 
+
+	typedef struct 
+	{ 
+		int numbers[CAPACITY]; 
+		int size; 
+	} 
+	stack;
+	
+We define a type and struct called "stack" with a property of "numbers" which is an array of integers of 
+size CAPACITY and a property of "size" which is an integer. Stack can be initialized many times but each 
+of its instance has the same properties (numbers[CAPACITY] and size) and operations (the insertion and removal principle).
+
+
+2. "Say" is an abstraction in the sense that, no matter what content we want the program to print out, 
+"Say" will always have the same properties, functionality, and interface. The function "say" will take an 
+input from the keyboard and printout the content on the screen. The same function is executed no matter what 
+the input from the keyboard is. In other words, the essence of "say" is carried out whenever the function is called. 
+
+
+3. String is an abstract data type in the sense that it has an underlying structure which is a sequence of 
+characters. A string points to a null-terminated ('\0') series of characters at sequential addresses. 
+These characteristics define the essence that makes string what it is. No matter how many instances 
+there are of the "string" type, they all carry the same properties (null-terminated series of sequential characters). 
+Standardizing the properties whenever used makes string an abstraction. 
+
+
+== Debrief
+
+1. 	Stack and queue: 
+	https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/Stacks%20and%20Queues.html
+	http://docs.cs50.net/2016/fall/notes/5/week5.html#stacks-and-queues
+	
+	Typedef struct: http://fresh2refresh.com/c-programming/c-typedef/
+    	
+    Difference between string and char array: 
+    http://stackoverflow.com/questions/2283900/what-is-the-difference-between-a-char-array-and-a-string
+
+2. 1.5 hours 

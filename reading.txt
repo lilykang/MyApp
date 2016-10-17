@@ -1,0 +1,31 @@
+s= Reading Someone Else's Code
+
+== Answers
+
+1. Input for get_string() is stored on heap, meaning that the storage uses a pointer that stays global across the program. Unlike stack,
+heap is not managed automatically for the user. The user must allocate the memory for the variable before using the block of memory and free that block
+after using that variable. When the user's has no input, the memory that was previously allocated must be freed to prevent memory leak. 
+Therefore, it is critical for the progrma to "return null" upon receiving no input from the user. This case is, however, different than
+char, which is a primitive data type in C programmming. When char is declared, the memory is automatically allocated in stack and it is
+also automatically deleted upon the completion of the function. When the input is null, the memory for the char variable will not 
+cause memory leak and therefore, it is not necessary to manually free the memory by returning null. However, it is useful for the user
+to know what is the maximum allowance for the input so that the user can be prompted to enter a legal input.
+
+2. We try to read two characters from the user because there might be a symbol that is not a character before or after the character
+that the system is trying to read. For example, there could be an apostraphe before or after the character. In this case, the computer
+will read the character rather than the symbol. 
+
+3. When "static" is not specified when declaring a variable, the default global varaibles have external linkage. 
+When static is used, the declared object has internal linkage. When the static variable is local, the variable can
+maintain its value from one function call to another and it will exist until the program ends. In our case, the 
+static variables are local. Both variables are used multiple times throughout the program. Static ensures that their values sustain
+across the program, especially when it comes to resizing the array towards the end of the program.
+
+4. The library has a function called "teardown" that is called automatically after execution exists main. 
+The teardown function is a destructor and it goes through a loop to free each of the library's strings. 
+
+== Debrief
+
+1. http://faculty.cs.niu.edu/~freedman/241/241notes/241var2.htm
+
+2. one hour

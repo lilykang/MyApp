@@ -1,0 +1,51 @@
+= Bleep
+
+== Answers
+
+1. The program censors five- and six-letter words like "puppy" and "kitten" because, when these words are assigned 
+to the four-character array "word," they exceed the total memory allowed for the "word" variable. The additional 
+characters will then occupy the computer's memory for "bleep," which immediately follows the variable "word." 
+This explains why, when inputting five- or six-letter words in the program, the terminal returns an error message stating, 
+"runtime error: load of value 121, which is not a valid value for type '_Bool'." The error message suggests that whatever 
+value that has intruded into the space of boolean "bleep" is not suitable for its type as a boolean. Variable "bleep" 
+then automatically returns "true" and the program prints out "$#@!," suggesting the word is censored. This is a bug 
+because the program should instead print out the word itself when it is not four-letter long. 
+
+
+2. In order to fix the program, we can initialize an array of character that can store up to 46 characters. 
+This is because the longest English word has 45 characters and the terminating null character occupies the another space. 
+Instead of having a Boolean variable called "bleep," removing it and directly printing the intended results would be the 
+simplest way to implement the program while still achieving the program's purpose. In this new program as shown below, 
+when the user's input is a four-letter word, the program returns ""$#@!" and when the input is anything but a 
+four-letter word, the program returns the input itself, suggesting the word is not being censored. 
+
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+
+int main(void)
+{
+    // the longest word is 45-character long, therefore declaring a variable with enough memory for the longest word 
+    char word[46];
+    scanf("%s", word);
+    
+    if (strlen(word) == 4)
+    {
+        printf("$#@!\n");
+    }
+    
+    else
+    {
+        printf("%s\n", word);
+    }
+    
+    
+}
+
+== Debrief
+
+1. I just figured it out without referring to any external resources. However, David Malan helped to clarify the question. 
+
+2. One hour 
+
