@@ -1,0 +1,104 @@
+= Insecurity
+
+== Answers
+
+1. The file format is not very secure because the password, which is the header of the text file, is visible to 
+everyone who happens to see the text. Say someone opens the text and leaves the compueter unattended,
+whoever sees the text file will also see the password right at the beginning of the text. This would potentially 
+pose a thread to the privacy and security of the text file. 
+
+2. 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <cs50.h>
+#include <ctype.h>
+#include <string.h>
+
+typedef struct
+{
+    char password[8];
+}
+FILEHEADER;
+
+
+int main(int argc, char *argv[])
+{
+    // ensure proper usage
+    if (argc != 3)
+    {
+        fprintf(stderr, "Usage: ./insecurity pathin pathout \n");
+        return 1;
+    }
+    
+    char *pathin = argv[1];
+    char *pathout = argv[2];
+    
+    FILE *inptr = fopen(pathin, "r");
+    if (inptr == NULL)
+    {
+        fprintf(stderr, "Could not open %s.\n", pathin);
+        return 2;
+    }
+
+    FILE *outptr = fopen(pathout, "w");
+    if (outptr == NULL)
+    {
+        fclose(inptr);
+        fprintf(stderr, "Could not create %s.\n", pathout);
+        return 3;
+    }
+
+    // read pathin's FILEHEADER
+    FILEHEADER fh;
+    fread(&fh, sizeof(FILEHEADER), 1, inptr);
+ 
+    // remove the fileheader from the pathin file
+    
+    char word[46];
+    char *c = malloc(sizeof(char)*46);
+    
+
+    while (fgets(word,46,inptr)!= NULL)
+    {
+        
+        c = fgets(word,46,inptr);
+        
+        
+        // loop while the content of the input file is a character 
+       for (int i = 0; i < strlen(c); i++)
+       {
+            if (c[i] >= 65)
+            {
+                // read from pathin
+                fread(&c, sizeof(c), 1, inptr);
+        
+                // write to pathout
+                fwrite(&c, sizeof(c), 1, outptr);
+            }
+       }
+   
+        
+         
+    }
+    
+    
+    fclose(inptr);
+
+    // close outfile
+    fclose(outptr);
+   
+    free(c);
+    
+    // success
+    return 0;
+    
+}
+
+
+
+== Debrief
+
+1. Problem set 4
+
+2. 2 hours 

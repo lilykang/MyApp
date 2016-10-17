@@ -1,0 +1,30 @@
+= Restructuring Strings
+
+== Answers
+
+1. The advantage of the alternative representation is the ease of knowing the length of the string. Instead
+of using strlen, the user can now use s[0] as strlen and know precisely how long the word is. Additionally,
+the counting of characters in the word itself starts with 1, which can be more intuitive for some people. 
+
+2. The disadvantage of the alternative representation of string is that it can be hard to keep track of where each 
+string ends. With the trailing "\0," the user can loop through a series of strings and treating each one as a separate
+entity that ends with "\0." With s[0] now being the beginning of a string, it can be hard to know when the string ends, 
+especially when the string itself contains a number. For example, when the string itself is "hello1," the system would not know 
+whether the nunmber 1 is the beginning of the next string or if it is part of a string. Additionally, when the word gets longer than 9 characters, say 14,
+the length of the word could occupy two grids and the computer might be confused as to whether that stands for the
+length of the word or whether the number is part of the word. 
+
+3. 
+
+size_t strlen(const char *s)
+{
+    s = get_string();
+    return s[0];
+    
+}
+
+== Debrief
+
+1. course notes
+
+2. one hour

@@ -1,0 +1,65 @@
+= What's Upword?
+
+== Answers
+
+1. Yes
+
+2. No
+
+3. 
+
+#include <ctype.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+
+int main()
+
+{
+    string s = get_string();
+    upword(s);
+    printf("Input is upword: ")
+}
+
+bool upword(const char *word)
+{
+    
+    int key_ai[strlen(word)];
+    
+
+    if (word != NULL)
+    {
+        // Covert the key into an array of alphabetical index numbers 
+        for (int j = 0, n = strlen(word); j < n; j++)
+        {
+            if (isupper (key[j]) != 0)
+            {
+                key_ai[j] = (int)key[j] - (int)65;
+            }
+         
+            if (islower (key[j]) != 0) 
+            {
+                key_ai[j] = (int)key[j] - (int)97;
+            }
+            
+           
+        }
+        
+        while (key_ai[i] < key_ai[i+1])
+        {
+            i++;
+            return true;
+        }
+    
+    return false;
+    }
+    
+    
+    return false;
+}
+
+== Debrief
+
+1. course notes
+
+2. 1 hour

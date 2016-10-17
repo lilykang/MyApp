@@ -1,0 +1,13 @@
+= Trusting `clang`
+
+== Answers
+
+1. TODO
+
+2. TOD
+
+== Debrief
+
+1. TODO
+
+2. TODO
